@@ -1,0 +1,202 @@
+@set HasKey=false
+@set HasItem=false
+@set TalkedAboutKey=false
+@set SafeChecked=false
+
+@hideUI KeyIcon
+@hideUI QuestItem
+
+@back Corridor
+@char Ichigo.Default position:0.5
+
+Ichigo: Привет!
+Ichigo: Мне нужна твоя помощь.
+Ichigo: В сейфе лежит очень важная вещь.
+Ichigo: Принеси её мне, пожалуйста.
+
+@goto .Corridor
+
+#Corridor
+
+@back Corridor
+@char Ichigo.Idle position:0.2
+
+Me: Я в коридоре. Куда идти дальше?
+
+@choice "Поговорить с Ичиго" goto:.IchigoInteraction
+@choice "Пойти в офис" goto:.Office
+@choice "Пойти в класс" goto:.Classroom
+
+@stop
+
+
+#IchigoInteraction
+
+@if HasItem==true
+
+@goto .FinishQuest
+
+@endif
+
+@if SafeChecked==false
+
+Ichigo: Как успехи?
+Ichigo: Попробуй поискать предмет в сейфе.
+
+@goto .Corridor
+
+@endif
+
+@if SafeChecked==true
+
+@if TalkedAboutKey==false
+
+@set TalkedAboutKey=true
+
+Ichigo: Значит сейф закрыт?
+Ichigo: Кажется, я видел ключ где-то в Classroom.
+Ichigo: Проверь его.
+
+@goto .Corridor
+
+@endif
+
+@endif
+
+Ichigo: Как успехи?
+Ichigo: Я рассчитываю на тебя.
+
+@goto .Corridor
+
+
+#Office
+
+@back Office
+@hide Ichigo
+
+Me: Здесь офис. Похоже, сейф где-то рядом.
+
+@choice "Осмотреть сейф" goto:.Safe
+@choice "Вернуться в коридор" goto:.Corridor
+@choice "Пойти в класс" goto:.Classroom
+
+@stop
+
+
+#Safe
+
+@if HasItem==true
+
+Me: Здесь больше ничего нет.
+
+@goto .Office
+
+@endif
+
+@if HasKey==true
+
+@goto .OpenSafe
+
+@endif
+
+@set SafeChecked=true
+
+Me: Сейф закрыт.
+Me: Похоже, нужен ключ.
+
+@goto .Office
+
+
+#OpenSafe
+
+Me: Отлично. Теперь я могу открыть сейф.
+
+@set HasKey=false
+
+@hideUI KeyIcon
+@showUI QuestItem
+
+@set HasItem=true
+
+Me: Я получил нужный предмет.
+
+@goto .Office
+
+
+#Classroom
+
+@back Classroom
+@hide Ichigo
+
+Me: Здесь класс.
+
+@if HasKey==false
+
+@if HasItem==false
+
+@choice "Осмотреть ключ" goto:.Key
+
+@endif
+
+@endif
+
+@choice "Вернуться в коридор" goto:.Corridor
+@choice "Пойти в офис" goto:.Office
+
+@stop
+
+
+#Key
+
+@if HasKey==true
+
+Me: Я уже подобрал ключ.
+
+@goto .Classroom
+
+@endif
+
+@if HasItem==true
+
+Me: Здесь больше ничего не нужно.
+
+@goto .Classroom
+
+@endif
+
+Me: Похоже, это тот самый ключ.
+
+; Запуск мини-игры будет подключен через кастомную команду на C#.
+@choice "Считать мини-игру пройденной" goto:.MiniGameSuccess
+@choice "Отойти" goto:.Classroom
+
+@stop
+
+
+#MiniGameSuccess
+
+@set HasKey=true
+
+@showUI KeyIcon
+
+Me: Отлично!
+Me: Теперь можно открыть сейф.
+
+@goto .Classroom
+
+
+#FinishQuest
+
+@char Ichigo.Happy position:0.5
+
+Ichigo: Ты справился!
+Ichigo: Именно этот предмет мне был нужен.
+Ichigo: Большое спасибо!
+
+Me: Рад помочь.
+
+Ichigo: До встречи!
+
+@hideUI QuestItem
+
+@end
