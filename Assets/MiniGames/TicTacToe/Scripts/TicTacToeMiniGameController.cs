@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections.Generic;
 using Naninovel;
 using UnityEngine;
@@ -7,12 +8,14 @@ namespace QuestPrototype.MiniGames.TicTacToe
     public class TicTacToeMiniGameController : MonoBehaviour
     {
         private const string PrefabPath = "MiniGames/TicTacToe/TicTacToeCanvas";
+        private const int FinishDelayMs = 650;
 
         private readonly int[] board = new int[TicTacToeMiniGameView.CellCount];
         private readonly List<int> availableMoves = new List<int>(TicTacToeMiniGameView.CellCount);
 
         private UniTaskCompletionSource<bool> completionSource;
         private TicTacToeMiniGameView view;
+        private CancellationToken cancellationToken;
         private bool gameFinished;
 
         public static async UniTask<bool> PlayAsync(AsyncToken token = default)
@@ -56,6 +59,7 @@ namespace QuestPrototype.MiniGames.TicTacToe
         private async UniTask<bool> RunAsync(TicTacToeMiniGameView gameView, AsyncToken token)
         {
             view = gameView;
+            cancellationToken = token.CancellationToken;
             completionSource = new UniTaskCompletionSource<bool>();
             gameFinished = false;
 
@@ -64,9 +68,7 @@ namespace QuestPrototype.MiniGames.TicTacToe
 
             StartGame();
 
-            if (token.Canceled)
-                Finish(false, "Mini-game canceled.");
-
+            using var cancelReg = cancellationToken.Register(() => Finish(false, string.Empty));
             return await completionSource.Task;
         }
 
@@ -173,7 +175,7 @@ namespace QuestPrototype.MiniGames.TicTacToe
 
         private async UniTaskVoid CloseAfterDelayAsync(bool won)
         {
-            await UniTask.Delay(650);
+            await UniTask.Delay(FinishDelayMs, cancellationToken: cancellationToken).SuppressCancellationThrow();
 
             if (view)
             {

@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,11 +13,11 @@ namespace QuestPrototype.MiniGames.TicTacToe
         public event Action<int> OnCellPressed;
         public event Action OnClosePressed;
 
-        public TMPro.TMP_Text TitleText;
-        public TMPro.TMP_Text StatusText;
-        public Button CloseButton;
-        public Button[] CellButtons = new Button[CellCount];
-        public TMPro.TMP_Text[] CellTexts = new TMPro.TMP_Text[CellCount];
+        [SerializeField] public TMP_Text TitleText;
+        [SerializeField] public TMP_Text StatusText;
+        [SerializeField] public Button CloseButton;
+        [SerializeField] public Button[] CellButtons = new Button[CellCount];
+        [SerializeField] public TMP_Text[] CellTexts = new TMP_Text[CellCount];
 
         private readonly UnityAction[] cellHandlers = new UnityAction[CellCount];
         private UnityAction closeHandler;
@@ -114,7 +115,7 @@ namespace QuestPrototype.MiniGames.TicTacToe
                 CellButtons = new Button[CellCount];
 
             if (CellTexts == null || CellTexts.Length != CellCount)
-                CellTexts = new TMPro.TMP_Text[CellCount];
+                CellTexts = new TMP_Text[CellCount];
         }
     }
 }
