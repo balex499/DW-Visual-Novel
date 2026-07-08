@@ -209,8 +209,8 @@ namespace QuestPrototype.Interaction
                     {
                         CreateHotspot(parent, "KeyHotspot", "Key", "Key", HotspotInteractionMode.CollectViaMiniGame,
                             new Vector2(420f, -260f), new Vector2(180f, 120f),
-                            new HotspotVariableCondition("HasKey", false),
-                            new HotspotVariableCondition("HasItem", false))
+                            new HotspotVariableCondition("HasKey", false, true),
+                            new HotspotVariableCondition("HasItem", false, true))
                     };
                 default:
                     return System.Array.Empty<LocationInteractionHotspot>();

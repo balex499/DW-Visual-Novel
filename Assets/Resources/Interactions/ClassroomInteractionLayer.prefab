@@ -214,4 +214,4 @@ MonoBehaviour:
   visibleWhen:
   - variableName: HasKey
     expectedValue: 0
-    treatMissingAsVisible: 0
+    treatMissingAsVisible: 1
