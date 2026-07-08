@@ -144,3 +144,30 @@ MonoBehaviour:
     - name: ScriptNavigatorUI
       pathPrefix: UI
       guid: 735d6aa767879aa469134858c5b2f0a7
+  - Id: Scripts
+    Resources:
+    - name: MainScript
+      pathPrefix: Scripts
+      guid: 1827bcf28b4afbb40862b00356e37b2b
+  - Id: Characters/5f1e804a-4027-4cfa-a4bc-e2d97e152e73
+    Resources:
+    - name: Default
+      pathPrefix: Characters/Ichigo
+      guid: b342d48e0ac91924ea073a68ed21d3d8
+    - name: Happy
+      pathPrefix: Characters/Ichigo
+      guid: 6ef529fbfc578224a89f2db454ee883a
+    - name: Idle
+      pathPrefix: Characters/Ichigo
+      guid: 647ad2d70ea720f459a474f917ff9d3d
+  - Id: Backgrounds/a4b29950-1dd1-4e77-b385-18b949e31680
+    Resources:
+    - name: Corridor
+      pathPrefix: Backgrounds/MainBackground
+      guid: f8b4f68d98dab5f439e4bdaf825bd8f8
+    - name: Classroom
+      pathPrefix: Backgrounds/MainBackground
+      guid: f04a76e77e1981b498ceaf30864a4e09
+    - name: Office
+      pathPrefix: Backgrounds/MainBackground
+      guid: 7ca171f43cb49ef49bb37cad36852fa8
