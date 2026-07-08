@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b2b151dcd3cea8248aadf5539102f588
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189047
+  packageName: Custom Toolbar
+  packageVersion: 1.0
+  assetPath: Assets/CustomToolbar/Editor/CustomToolbar/Scripts/Utils/ForceReserializeAssetsUtils.cs
+  uploadId: 418522

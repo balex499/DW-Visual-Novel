@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: e2cba83c97554327b25238d32fd85c62
+timeCreated: 1606711601
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189047
+  packageName: Custom Toolbar
+  packageVersion: 1.0
+  assetPath: Assets/CustomToolbar/Editor/CustomToolbar/Scripts/Setting/CustomToolbarSetting.cs
+  uploadId: 418522

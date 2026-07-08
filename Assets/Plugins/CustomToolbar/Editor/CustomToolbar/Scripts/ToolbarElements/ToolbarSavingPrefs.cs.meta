@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8a151fe426daa6d4f95d829b2ce57df1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189047
+  packageName: Custom Toolbar
+  packageVersion: 1.0
+  assetPath: Assets/CustomToolbar/Editor/CustomToolbar/Scripts/ToolbarElements/ToolbarSavingPrefs.cs
+  uploadId: 418522

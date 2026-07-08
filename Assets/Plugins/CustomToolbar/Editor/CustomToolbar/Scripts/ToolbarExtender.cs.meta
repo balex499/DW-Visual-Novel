@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8501d047e031fef468587e11de32c6ad
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189047
+  packageName: Custom Toolbar
+  packageVersion: 1.0
+  assetPath: Assets/CustomToolbar/Editor/CustomToolbar/Scripts/ToolbarExtender.cs
+  uploadId: 418522

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2059aad740c79544a8bfb084d08c3921
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 189047
+  packageName: Custom Toolbar
+  packageVersion: 1.0
+  assetPath: Assets/CustomToolbar/Editor/CustomToolbar/Scripts/ToolbarElements/ToolbarStartFromFirstScene.cs
+  uploadId: 418522
