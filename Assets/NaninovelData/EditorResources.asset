@@ -144,6 +144,12 @@ MonoBehaviour:
     - name: ScriptNavigatorUI
       pathPrefix: UI
       guid: 735d6aa767879aa469134858c5b2f0a7
+    - name: KeyIcon
+      pathPrefix: UI
+      guid: 4c25a08f5ac14594eae56da5e210eef0
+    - name: QuestItem
+      pathPrefix: UI
+      guid: 44053db8988bbc4478ce10a058cd0fc5
   - Id: Scripts
     Resources:
     - name: MainScript

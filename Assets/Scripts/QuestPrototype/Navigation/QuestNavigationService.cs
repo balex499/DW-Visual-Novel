@@ -1,4 +1,5 @@
 using Naninovel;
+using QuestPrototype.Interaction;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,21 +51,24 @@ namespace QuestPrototype.Navigation
             }
             navigationView.SetCurrentLocation(currentLocation);
             navigationView.SetVisible(true);
+            if (!string.IsNullOrWhiteSpace(currentLocation))
+                Engine.GetService<IQuestInteractionService>()?.Show(currentLocation);
         }
 
         public void Hide()
         {
             if (!navigationView) return;
             navigationView.SetVisible(false);
+            Engine.GetService<IQuestInteractionService>()?.Hide();
         }
 
         public void NavigateTo(string locationLabel)
         {
             if (isNavigating || string.IsNullOrWhiteSpace(locationLabel)) return;
-            NavigateToInternal(locationLabel);
+            NavigateToInternal(locationLabel).Forget();
         }
 
-        private void NavigateToInternal(string locationLabel)
+        private async UniTaskVoid NavigateToInternal(string locationLabel)
         {
             isNavigating = true;
             Hide();
@@ -77,7 +81,9 @@ namespace QuestPrototype.Navigation
             }
 
             var target = locationLabel.StartsWith(".") ? locationLabel.Substring(1) : locationLabel;
-            scriptPlayer.ResumeAtLabel(target);
+            var scriptPath = scriptPlayer.PlayedScript.Path;
+            await UniTask.Yield();
+            scriptPlayer.PlayAtLabel(scriptPath, target);
 
             isNavigating = false;
         }
