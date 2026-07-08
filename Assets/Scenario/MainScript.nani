@@ -21,16 +21,17 @@ Ichigo: Принеси её мне, пожалуйста.
 @back Corridor
 @char Ichigo.Idle position:0.2
 
-Me: Я в коридоре. Куда идти дальше?
+Me: Я в коридоре.
+Me: Можно поговорить с Ичиго или перейти в другую локацию.
 
-@choice "Поговорить с Ичиго" goto:.IchigoInteraction
-@choice "Пойти в офис" goto:.Office
-@choice "Пойти в класс" goto:.Classroom
+@showlocnav current:Corridor
 
 @stop
 
 
 #IchigoInteraction
+
+@hidelocnav
 
 @if HasItem==true
 
@@ -76,14 +77,14 @@ Ichigo: Я рассчитываю на тебя.
 
 Me: Здесь офис. Похоже, сейф где-то рядом.
 
-@choice "Осмотреть сейф" goto:.Safe
-@choice "Вернуться в коридор" goto:.Corridor
-@choice "Пойти в класс" goto:.Classroom
+@showlocnav current:Office
 
 @stop
 
 
 #Safe
+
+@hidelocnav
 
 @if HasItem==true
 
@@ -130,23 +131,14 @@ Me: Я получил нужный предмет.
 
 Me: Здесь класс.
 
-@if HasKey==false
-
-@if HasItem==false
-
-@choice "Осмотреть ключ" goto:.Key
-
-@endif
-
-@endif
-
-@choice "Вернуться в коридор" goto:.Corridor
-@choice "Пойти в офис" goto:.Office
+@showlocnav current:Classroom
 
 @stop
 
 
 #Key
+
+@hidelocnav
 
 @if HasKey==true
 
@@ -187,6 +179,7 @@ Me: Теперь можно открыть сейф.
 
 #FinishQuest
 
+@hidelocnav
 @char Ichigo.Happy position:0.5
 
 Ichigo: Ты справился!
@@ -199,4 +192,4 @@ Ichigo: До встречи!
 
 @hideUI QuestItem
 
-@end
+@stop
