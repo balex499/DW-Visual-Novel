@@ -33,7 +33,7 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
       - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-    guid: 0dde2464-1cc5-4786-836d-6fa67bb16f44
+    guid: bf7eedc1-d520-4bfd-90fc-8d1e757ebba4
     customData:
       rid: -2
     WaitHideOnChoice: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      guid: 1ba7bbfd-aacb-4283-ad6a-1da811b76b70
+      guid: 224f73f8-7558-4a29-a593-1672766889cc
       customData:
         rid: -2
       WaitHideOnChoice: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      guid: f13087bc-4e05-45a3-9315-b8f192df9d81
+      guid: e87793ec-2d37-46ca-ab45-ee6921278c42
       customData:
         rid: -2
       WaitHideOnChoice: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
         - Naninovel.ProjectResourceProvider, Elringus.Naninovel.Runtime, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      guid: 83112d36-bf8f-40da-847a-4592424cd404
+      guid: cf1ab4cb-75f1-488d-9b76-f7e5e85e65e6
       customData:
         rid: -2
       WaitHideOnChoice: 0

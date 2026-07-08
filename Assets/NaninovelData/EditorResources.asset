@@ -13,42 +13,42 @@ MonoBehaviour:
   m_Name: EditorResources
   m_EditorClassIdentifier: Elringus.Naninovel.Editor::Naninovel.EditorResources
   resourceCategories:
-  - Id: TextPrinters/fc60967b-16d8-4d35-af33-ca2371ae8530
+  - Id: TextPrinters/2f6f6956-dee9-4013-9d67-4f5c69899c30
     Resources:
     - name: Dialogue
       pathPrefix: TextPrinters
       guid: 1bc08ccd31adff6439e97161aa6e1d8b
-  - Id: TextPrinters/bb08dd18-04a9-483b-87c6-90d03993b64d
+  - Id: TextPrinters/7202bcc7-8ee8-4715-bf47-447444498f7a
     Resources:
     - name: Fullscreen
       pathPrefix: TextPrinters
       guid: c87cebd3f0d4f174789cd351ce9591c4
-  - Id: TextPrinters/f3114947-8aa8-4e9f-8460-a2bc56564d54
+  - Id: TextPrinters/143544c1-255a-475f-9b31-0af428a35f56
     Resources:
     - name: Wide
       pathPrefix: TextPrinters
       guid: 781828b806deb1e4cbf50ef9de41da10
-  - Id: TextPrinters/425b60e3-687f-4509-919d-2834b9adc859
+  - Id: TextPrinters/29c104af-f144-4f2f-a3cc-206b90fd5d35
     Resources:
     - name: Chat
       pathPrefix: TextPrinters
       guid: 6f9836a3c4f777741b1962979d97e485
-  - Id: TextPrinters/bdd63e54-5b09-474a-bbe6-d37c7c8c1d01
+  - Id: TextPrinters/36360c0d-09f2-4ca2-8376-dbb255c331c9
     Resources:
     - name: Bubble
       pathPrefix: TextPrinters
       guid: b47d9659b2be5ee4e95a776f213c9d4b
-  - Id: ChoiceHandlers/1ba7bbfd-aacb-4283-ad6a-1da811b76b70
+  - Id: ChoiceHandlers/224f73f8-7558-4a29-a593-1672766889cc
     Resources:
     - name: ButtonList
       pathPrefix: ChoiceHandlers
       guid: 1f6aa29000e839c409e6a9c0704adc96
-  - Id: ChoiceHandlers/f13087bc-4e05-45a3-9315-b8f192df9d81
+  - Id: ChoiceHandlers/e87793ec-2d37-46ca-ab45-ee6921278c42
     Resources:
     - name: ButtonArea
       pathPrefix: ChoiceHandlers
       guid: 4fa6d62f894ae6e4698bfa8af59e7942
-  - Id: ChoiceHandlers/83112d36-bf8f-40da-847a-4592424cd404
+  - Id: ChoiceHandlers/cf1ab4cb-75f1-488d-9b76-f7e5e85e65e6
     Resources:
     - name: ChatReply
       pathPrefix: ChoiceHandlers
