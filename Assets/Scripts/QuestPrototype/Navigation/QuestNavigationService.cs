@@ -168,7 +168,7 @@ namespace QuestPrototype.Navigation
             text.alignment = TextAnchor.MiddleCenter;
             text.color = new Color(0.12f, 0.12f, 0.12f, 1f);
             text.fontSize = 30;
-            text.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
 
             return buttonGO.GetComponent<Button>();
         }

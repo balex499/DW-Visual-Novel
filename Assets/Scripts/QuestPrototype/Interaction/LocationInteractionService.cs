@@ -247,7 +247,7 @@ namespace QuestPrototype.Interaction
             text.alignment = TextAnchor.MiddleCenter;
             text.color = new Color(0.12f, 0.12f, 0.12f, 1f);
             text.fontSize = 28;
-            text.font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
 
             var hotspot = hotspotGO.GetComponent<LocationInteractionHotspot>();
             hotspot.ConfigureRuntime(hotspotGO, objectName, targetLabel, mode, conditions);

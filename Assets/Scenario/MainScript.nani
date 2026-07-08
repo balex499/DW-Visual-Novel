@@ -2,6 +2,7 @@
 @set HasItem=false
 @set TalkedAboutKey=false
 @set SafeChecked=false
+@set TicTacToeWon=false
 
 @hideUI KeyIcon
 @hideUI QuestItem
@@ -133,8 +134,11 @@ Me: Я получил нужный предмет.
 
 @back Classroom
 @hide Ichigo
+
 @showlocints location:Classroom
+
 Me: Здесь класс.
+
 @showlocnav current:Classroom
 
 
@@ -164,11 +168,24 @@ Me: Здесь больше ничего не нужно.
 
 Me: Похоже, это тот самый ключ.
 
-; Запуск мини-игры будет подключен через кастомную команду на C#.
-@choice "Считать мини-игру пройденной" goto:.MiniGameSuccess
-@choice "Отойти" goto:.Classroom
+@set TicTacToeWon=false
+@playtictactoe
+
+@if TicTacToeWon==true
+@goto .MiniGameSuccess
+@endif
+
+@goto .MiniGameFail
 
 @stop
+
+
+#MiniGameFail
+
+Me: На этот раз не вышло.
+Me: Попробую еще раз.
+
+@goto .Classroom
 
 
 #MiniGameSuccess
